@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b76rnjs2dc8s8"]
+
+[ext_resource type="PackedScene" uid="uid://cx831mf0xoyg" path="res://scènes/tuile.tscn" id="1_t7eqn"]
+[ext_resource type="Texture2D" uid="uid://c5rr1a637wuqw" path="res://ressources/mur.png" id="2_10hyo"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_10hyo"]
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="mur" instance=ExtResource("1_t7eqn")]
+collision = true
+bloque = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("2_10hyo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D" index="2"]
+occluder = SubResource("OccluderPolygon2D_10hyo")

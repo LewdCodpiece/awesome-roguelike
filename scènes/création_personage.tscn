@@ -1,0 +1,232 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuhejdqo1utqx"]
+
+[ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="1_g2c7a"]
+[ext_resource type="Texture2D" uid="uid://c3iq0ul882ag" path="res://ressources/dés_texture.png" id="2_6nbe5"]
+[ext_resource type="Script" uid="uid://c2wck180bfyy7" path="res://scènes/création_personage.gd" id="2_biybg"]
+[ext_resource type="Texture2D" uid="uid://drptsypu5vyl" path="res://ressources/dés_texture_anim1.png" id="3_p3bop"]
+[ext_resource type="Texture2D" uid="uid://crpgtcni3k4ro" path="res://ressources/dés_texture_anim2.png" id="4_biybg"]
+[ext_resource type="Texture2D" uid="uid://ifu5n6hmwum5" path="res://ressources/dés_texture_anim3.png" id="5_1uvvs"]
+[ext_resource type="Texture2D" uid="uid://cfelufc6328eb" path="res://ressources/dés_texture_anim4.png" id="6_ucumn"]
+[ext_resource type="Texture2D" uid="uid://brc26j4l70joi" path="res://ressources/dés_texture_anim5.png" id="7_1rsah"]
+[ext_resource type="Texture2D" uid="uid://cp7d8u80np0ga" path="res://ressources/dés_texture_anim6.png" id="8_oave5"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2vcqw"]
+frames = 6
+speed_scale = 5.0
+frame_0/texture = ExtResource("3_p3bop")
+frame_1/texture = ExtResource("4_biybg")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_1uvvs")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_ucumn")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("7_1rsah")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("8_oave5")
+frame_5/duration = 1.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_biybg"]
+size = Vector2(64, 64)
+
+[node name="création_personage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g2c7a")
+script = ExtResource("2_biybg")
+
+[node name="fond" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="colonnes" type="HBoxContainer" parent="fond"]
+layout_mode = 2
+
+[node name="stats" type="PanelContainer" parent="fond/colonnes"]
+layout_mode = 2
+
+[node name="lignes" type="VBoxContainer" parent="fond/colonnes/stats"]
+layout_mode = 2
+
+[node name="titre" type="Label" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Statistiques du personnage"
+
+[node name="puissance" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/puissance"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Puissance"
+
+[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/puissance"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 10.0
+value = 5.0
+rounded = true
+show_percentage = false
+
+[node name="verve" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/verve"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Verve"
+
+[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/verve"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 10.0
+value = 5.0
+rounded = true
+show_percentage = false
+
+[node name="entendement" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/entendement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Entendement"
+
+[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/entendement"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 10.0
+value = 5.0
+rounded = true
+show_percentage = false
+
+[node name="finesse" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/finesse"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Finesse"
+
+[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/finesse"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 10.0
+value = 5.0
+rounded = true
+show_percentage = false
+
+[node name="fortitude" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/fortitude"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Fortitude"
+
+[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/fortitude"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 10.0
+value = 5.0
+rounded = true
+show_percentage = false
+
+[node name="reroll" type="TextureButton" parent="fond/colonnes/stats/lignes"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("2_6nbe5")
+texture_pressed = ExtResource("2_6nbe5")
+texture_hover = SubResource("AnimatedTexture_2vcqw")
+stretch_mode = 0
+
+[node name="Charactéristiques" type="PanelContainer" parent="fond/colonnes/stats/lignes"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fond/colonnes/stats/lignes/Charactéristiques"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
+layout_mode = 2
+text = "Charactéristiques"
+
+[node name="pdv" type="HBoxContainer" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer/pdv"]
+layout_mode = 2
+text = "Point de vie"
+
+[node name="pdm" type="HBoxContainer" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer/pdm"]
+layout_mode = 2
+text = "Point de mana"
+
+[node name="inventaire" type="PanelContainer" parent="fond/colonnes"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fond/colonnes/inventaire"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/inventaire/VBoxContainer"]
+layout_mode = 2
+text = "Inventaire initial du personnage"
+
+[node name="objets" type="PanelContainer" parent="fond/colonnes/inventaire/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="liste" type="VBoxContainer" parent="fond/colonnes/inventaire/VBoxContainer/objets"]
+layout_mode = 2
+
+[node name="lore" type="PanelContainer" parent="fond/colonnes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fond/colonnes/lore"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="fond/colonnes/lore/VBoxContainer"]
+layout_mode = 2
+text = "Historique du personnage"
+
+[node name="image" type="TextureRect" parent="fond/colonnes/lore/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_biybg")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="fond/colonnes/lore/VBoxContainer"]
+layout_mode = 2
+text = "Biographie"
+
+[node name="Biographie" type="TextEdit" parent="fond/colonnes/lore/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="fond"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "Commencer l'exploration"
+
+[connection signal="pressed" from="fond/colonnes/stats/lignes/reroll" to="." method="_on_reroll_pressed"]

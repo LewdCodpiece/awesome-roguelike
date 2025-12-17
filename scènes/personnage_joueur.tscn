@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckf86rx64gwou"]
+
+[ext_resource type="Script" uid="uid://dql4vosaq5tet" path="res://scripts/personnage_joueur.gd" id="1_2osx5"]
+[ext_resource type="Texture2D" uid="uid://gai0cjm1c1xk" path="res://ressources/pj.png" id="2_scwtu"]
+[ext_resource type="PackedScene" uid="uid://ceajgv0j3rky0" path="res://scènes/ui.tscn" id="3_gnard"]
+[ext_resource type="Texture2D" uid="uid://dg8s8blxg8jlb" path="res://ressources/lumière_test_texture2.png" id="4_brktw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scwtu"]
+size = Vector2(7, 7)
+
+[node name="personnage_joueur" type="StaticBody2D"]
+script = ExtResource("1_2osx5")
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="ui_layer" instance=ExtResource("3_gnard")]
+offset_right = -1280.0
+offset_bottom = -720.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_scwtu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_scwtu")
+
+[node name="raycast_actions" type="RayCast2D" parent="Sprite2D"]
+target_position = Vector2(0, -8)
+collision_mask = 3
+
+[node name="lumière_test" type="PointLight2D" parent="Sprite2D"]
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_brktw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)

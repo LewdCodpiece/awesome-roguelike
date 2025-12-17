@@ -1,0 +1,65 @@
+[gd_scene load_steps=16 format=3 uid="uid://tkcaeupfcvs0"]
+
+[ext_resource type="PackedScene" uid="uid://ckf86rx64gwou" path="res://scènes/personnage_joueur.tscn" id="1_1hfun"]
+[ext_resource type="PackedScene" uid="uid://b76rnjs2dc8s8" path="res://scènes/mur.tscn" id="2_0bbb7"]
+[ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="2_1nrhp"]
+[ext_resource type="PackedScene" uid="uid://bxfeh4s3ueqt5" path="res://scènes/sol.tscn" id="2_7okui"]
+[ext_resource type="Script" uid="uid://btejuhgeciom1" path="res://scripts/carte.gd" id="2_pop52"]
+[ext_resource type="PackedScene" uid="uid://c3so64apx8t1" path="res://scènes/tuile_erreur.tscn" id="4_a4wvq"]
+[ext_resource type="PackedScene" uid="uid://lw3xan06i0fp" path="res://scènes/tuile_porte_1.tscn" id="5_aaks5"]
+[ext_resource type="PackedScene" uid="uid://cqs27b5gp0ifl" path="res://scènes/tuile_porte_eo_1.tscn" id="6_d5564"]
+[ext_resource type="PackedScene" uid="uid://bd7uuyftgdbf4" path="res://scènes/escalier_tuile.tscn" id="7_qlsp1"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_anb6u"]
+scenes/2/scene = ExtResource("2_7okui")
+scenes/3/scene = ExtResource("2_0bbb7")
+scenes/5/scene = ExtResource("4_a4wvq")
+
+[sub_resource type="TileSet" id="TileSet_1hfun"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetScenesCollectionSource_anb6u")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d5564"]
+resource_name = "mobilier"
+scenes/1/scene = ExtResource("5_aaks5")
+scenes/2/scene = ExtResource("6_d5564")
+scenes/3/scene = ExtResource("7_qlsp1")
+
+[sub_resource type="TileSet" id="TileSet_a4wvq"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetScenesCollectionSource_d5564")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7okui"]
+scenes/1/scene = ExtResource("1_1hfun")
+
+[sub_resource type="TileSet" id="TileSet_1nrhp"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetScenesCollectionSource_7okui")
+
+[node name="map" type="Node2D"]
+script = ExtResource("2_pop52")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="carte" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_1hfun")
+
+[node name="mobilier" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_a4wvq")
+
+[node name="personnages" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_1nrhp")
+
+[node name="écran_de_chargement" type="PanelContainer" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = ExtResource("2_1nrhp")
+
+[node name="bar_de_progression" type="ProgressBar" parent="écran_de_chargement"]
+custom_minimum_size = Vector2(200, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+show_percentage = false

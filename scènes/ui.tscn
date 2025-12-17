@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceajgv0j3rky0"]
+
+[ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="1_11lx3"]
+[ext_resource type="Script" uid="uid://xwt8liirvoda" path="res://scripts/ui.gd" id="2_lwn30"]
+[ext_resource type="Script" uid="uid://rwm0f2exfui5" path="res://scripts/débug.gd" id="3_7d43l"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_11lx3")
+script = ExtResource("2_lwn30")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/separation = 0
+
+[node name="barre_gauche" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 720)
+layout_mode = 2
+theme = ExtResource("1_11lx3")
+
+[node name="zone_jeu" type="Container" parent="HBoxContainer"]
+custom_minimum_size = Vector2(960, 720)
+layout_mode = 2
+
+[node name="marker_jeu" type="Marker2D" parent="HBoxContainer/zone_jeu"]
+
+[node name="débug" type="PanelContainer" parent="HBoxContainer/zone_jeu"]
+layout_mode = 2
+script = ExtResource("3_7d43l")
+
+[node name="Label" type="Label" parent="HBoxContainer/zone_jeu/débug"]
+layout_mode = 2
+text = "tour #"
+
+[node name="UI_droite" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(240, 720)
+layout_mode = 2

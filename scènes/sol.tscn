@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxfeh4s3ueqt5"]
+
+[ext_resource type="PackedScene" uid="uid://cx831mf0xoyg" path="res://scènes/tuile.tscn" id="1_qhvew"]
+[ext_resource type="Texture2D" uid="uid://bmg2kdsaiv2of" path="res://ressources/sol.png" id="2_mc3sd"]
+
+[node name="sol" instance=ExtResource("1_qhvew")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_mc3sd")

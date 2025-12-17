@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd7uuyftgdbf4"]
+
+[ext_resource type="PackedScene" uid="uid://cx831mf0xoyg" path="res://scènes/tuile.tscn" id="1_pgs8b"]
+[ext_resource type="Script" uid="uid://bftdg1rndq63g" path="res://escalier_tuile.gd" id="2_uah2p"]
+[ext_resource type="Texture2D" uid="uid://bph4nurac4qhg" path="res://ressources/tuile_escalier_1.png" id="3_cck28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiml8"]
+size = Vector2(8, 8)
+
+[node name="escalier_tuile" instance=ExtResource("1_pgs8b")]
+script = ExtResource("2_uah2p")
+collision = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("3_cck28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+shape = SubResource("RectangleShape2D_yiml8")

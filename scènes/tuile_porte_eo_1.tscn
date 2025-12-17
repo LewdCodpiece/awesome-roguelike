@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqs27b5gp0ifl"]
+
+[ext_resource type="PackedScene" uid="uid://lw3xan06i0fp" path="res://scènes/tuile_porte_1.tscn" id="1_twn0m"]
+[ext_resource type="Texture2D" uid="uid://cv6lt3kjowq6v" path="res://ressources/tuile_porte_EO_1.png" id="2_5eyv1"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_twn0m"]
+polygon = PackedVector2Array(-4, -1, 4, -1, 4, 1, -4, 1)
+
+[node name="tuile_porte_eo_1" instance=ExtResource("1_twn0m")]
+interractif = true
+
+[node name="Sprite2D" parent="StaticBody2D" index="0"]
+texture = ExtResource("2_5eyv1")
+
+[node name="LightOccluder2D" parent="StaticBody2D" index="2"]
+occluder = SubResource("OccluderPolygon2D_twn0m")

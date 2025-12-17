@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://yyiljm2pajx3"]
+
+[ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="1_acmq1"]
+[ext_resource type="Script" uid="uid://bkfg4oy8o0rlk" path="res://scripts/écran_accueil.gd" id="2_dfnlp"]
+
+[node name="écran_accueil" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_acmq1")
+script = ExtResource("2_dfnlp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 243.0
+offset_right = 696.0
+offset_bottom = 283.0
+
+[node name="nouvelle_partie" type="Button" parent="menu"]
+layout_mode = 2
+text = "Nouvelle exploration"
+
+[node name="options" type="Button" parent="menu"]
+layout_mode = 2
+text = "Options"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[connection signal="pressed" from="menu/nouvelle_partie" to="." method="_on_nouvelle_partie_pressed"]

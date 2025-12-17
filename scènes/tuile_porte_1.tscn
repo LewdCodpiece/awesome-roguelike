@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://lw3xan06i0fp"]
+
+[ext_resource type="PackedScene" uid="uid://cx831mf0xoyg" path="res://scènes/tuile.tscn" id="1_jd57f"]
+[ext_resource type="Texture2D" uid="uid://2n54x8nxy3b6" path="res://ressources/tuile_porte1.png" id="2_gyklq"]
+[ext_resource type="Script" uid="uid://dcy8f5y5gpllq" path="res://scènes/tuile_porte_1.gd" id="2_lbmle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbmle"]
+size = Vector2(8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gyklq"]
+polygon = PackedVector2Array(-1, -4, -1, 4, 1, 4, 1, -4)
+
+[node name="tuile_porte1" instance=ExtResource("1_jd57f")]
+script = ExtResource("2_lbmle")
+"vérouillé" = false
+ouvert = false
+collision = true
+bloque = true
+interractif = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0"]
+texture_filter = 1
+texture = ExtResource("2_gyklq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+shape = SubResource("RectangleShape2D_lbmle")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D" index="2"]
+occluder = SubResource("OccluderPolygon2D_gyklq")
