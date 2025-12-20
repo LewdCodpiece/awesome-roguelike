@@ -1,0 +1,13 @@
+res://scènes/carte.tscn
+res://thèmes/ui.tres
+res://scènes/ui.gdshader
+res://scripts/carte.gd
+res://chandelier.gd
+res://scènes/chandelier.tscn
+res://scènes/personnage_joueur.tscn
+res://scènes/journale.tscn
+res://scènes/journale.gd
+res://scènes/ui.tscn
+res://scènes/tuile_porte_1.tscn
+res://scènes/tuile_porte_1.gd
+res://scripts/variables_globales.gd

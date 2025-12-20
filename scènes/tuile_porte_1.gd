@@ -49,5 +49,10 @@ func ouvrir_porte():
 		static_body.set_collision_layer_value(2, true)
 		static_body.set_collision_mask_value(2, true)
 		
+		## message dans le journal
+		VariablesGlobales.journal.ajouter_message("Vous ouvrez la porte.")
+		
 		## Alternativement : self.queue_free()
 		## mais à réservé pour quand la porte est détruite
+	else:
+		VariablesGlobales.journal.ajouter_message("La porte est vérouillée.")

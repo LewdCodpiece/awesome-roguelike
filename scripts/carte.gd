@@ -442,7 +442,9 @@ func générer_étage(étage: Array[Array], nb_salles: int) -> Array[Array]:
 		étage = générer_salles(tailles_salles, position_salles, étage, salle)
 	
 	étage = connecter_salles(étage)
-	étage = nétoyer_étage(étage)
+	# tant que la détection d'îlots ne sera pas au point
+	# on garde cette ligne commentée
+	#étage = nétoyer_étage(étage)
 	étage = peupler_donjon(étage)
 			
 	return étage
@@ -518,11 +520,15 @@ func peupler_donjon(étage: Array[Array]) -> Array[Array]:
 	# on trouve les emplacements qui correspondent à des portse et on les ajoute à une liste
 	print("Génération des portes...")
 	étage = ajouter_portes(étage, trouver_porte(étage))
-	print("Portes générées et placées")
+	print("Portes générées et placées.")
 	
 	# on place l'escalier qui mène à l'étage suivant
 	étage = ajouter_escalier(étage)
 	
+	## on peuple le mobilier de chaque salles
+	print("On meuble les salles...")
+	étage = meubler_salles(étage)
+	print("Les salles sont toutes meublées.")
 	
 	return étage
 
@@ -585,4 +591,36 @@ func ajouter_escalier(étage: Array[Array]) -> Array[Array]:
 	mobilier_array[position_escalier.y][position_escalier.x] = "Es"
 	mobilier_node.set_cell(Vector2i(position_escalier.y, position_escalier.x), 0, Vector2i(0, 0), 3)
 		
+	return étage
+
+# fonction qui permet de trouver un endroit valide aléatoirement
+# à finir plus tard, quand j'en aurais besoin dans un cas réel
+func trouver_emplacement_valide_mobilier(étage, tuiles_autorisées: Array[String]=[]) -> Vector2i:
+	var pos: Vector2i = Vector2i(randi_range(0, len(étage[0] - 1)), randi_range(0, len(étage) - 1))
+	
+	while not "S" in étage[pos.y][pos.x] and mobilier_array[pos.y][pos.x] != "X":
+		pos = Vector2i(randi_range(0, len(étage[0] - 1)), randi_range(0, len(étage) - 1))
+	
+	return pos
+
+# la fonction qui prend chaque salle, décide quel mobilier y placer, où le placer et le place en conséquence
+func meubler_salles(étage) -> Array[Array]:	
+	# on prend toutes les salles une par une
+	for salle in infos_salles:
+		# est-ce que la salle a un chandelier: 90% des salles
+		if randf() >= .1:
+			var position_chandelier: Vector2i = Vector2i(randi_range(salle.x, salle.x + salle.l -1), randi_range(salle.y, salle.y + salle.h - 1))
+			var emplacement_trouvé: bool = false
+			
+			while not emplacement_trouvé:
+				if (mobilier_array[position_chandelier.y][position_chandelier.x] == "X"
+					and étage[position_chandelier.y][position_chandelier.x] == "S"+str(salle.id)):
+						emplacement_trouvé = true
+				
+				position_chandelier = Vector2i(randi_range(salle.x, salle.x + salle.l - 1), randi_range(salle.y, salle.y + salle.h - 1))
+			
+			print("Chandelier généré dans la salle " + str(salle.id) + "!")
+			mobilier_array[position_chandelier.y][position_chandelier.x] = "Ch"
+			mobilier_node.set_cell(Vector2i(position_chandelier.y, position_chandelier.x), 0, Vector2i(0, 0), 4)
+			
 	return étage

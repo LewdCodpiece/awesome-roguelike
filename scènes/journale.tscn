@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5q4vbowxw53j"]
+
+[ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="1_4bbyh"]
+[ext_resource type="Script" uid="uid://diq6o2l5mf3xe" path="res://scènes/journale.gd" id="1_8i36m"]
+
+[node name="journal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4bbyh")
+script = ExtResource("1_8i36m")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(960, 200)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="entrées_journals" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2

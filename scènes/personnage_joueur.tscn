@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dql4vosaq5tet" path="res://scripts/personnage_joueur.gd" id="1_2osx5"]
 [ext_resource type="Texture2D" uid="uid://gai0cjm1c1xk" path="res://ressources/pj.png" id="2_scwtu"]
 [ext_resource type="PackedScene" uid="uid://ceajgv0j3rky0" path="res://scènes/ui.tscn" id="3_gnard"]
-[ext_resource type="Texture2D" uid="uid://dg8s8blxg8jlb" path="res://ressources/lumière_test_texture2.png" id="4_brktw"]
+[ext_resource type="Texture2D" uid="uid://2qcgj4xpecui" path="res://ressources/lumière_naturelle_PJ.png" id="4_brktw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scwtu"]
 size = Vector2(7, 7)
@@ -28,7 +28,7 @@ texture = ExtResource("2_scwtu")
 target_position = Vector2(0, -8)
 collision_mask = 3
 
-[node name="lumière_test" type="PointLight2D" parent="Sprite2D"]
+[node name="lumière_naturelle" type="PointLight2D" parent="Sprite2D"]
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("4_brktw")

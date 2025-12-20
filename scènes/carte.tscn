@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://tkcaeupfcvs0"]
+[gd_scene load_steps=17 format=3 uid="uid://tkcaeupfcvs0"]
 
 [ext_resource type="PackedScene" uid="uid://ckf86rx64gwou" path="res://scènes/personnage_joueur.tscn" id="1_1hfun"]
 [ext_resource type="PackedScene" uid="uid://b76rnjs2dc8s8" path="res://scènes/mur.tscn" id="2_0bbb7"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://lw3xan06i0fp" path="res://scènes/tuile_porte_1.tscn" id="5_aaks5"]
 [ext_resource type="PackedScene" uid="uid://cqs27b5gp0ifl" path="res://scènes/tuile_porte_eo_1.tscn" id="6_d5564"]
 [ext_resource type="PackedScene" uid="uid://bd7uuyftgdbf4" path="res://scènes/escalier_tuile.tscn" id="7_qlsp1"]
+[ext_resource type="PackedScene" uid="uid://ckj7d4ichmmnv" path="res://scènes/chandelier.tscn" id="8_t85yp"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_anb6u"]
 scenes/2/scene = ExtResource("2_7okui")
@@ -24,6 +25,7 @@ resource_name = "mobilier"
 scenes/1/scene = ExtResource("5_aaks5")
 scenes/2/scene = ExtResource("6_d5564")
 scenes/3/scene = ExtResource("7_qlsp1")
+scenes/4/scene = ExtResource("8_t85yp")
 
 [sub_resource type="TileSet" id="TileSet_a4wvq"]
 tile_size = Vector2i(8, 8)
@@ -40,7 +42,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_7okui")
 script = ExtResource("2_pop52")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.85490197)
 
 [node name="carte" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_1hfun")

@@ -1,0 +1,15 @@
+Label
+VBoxContainer
+PanelContainer
+Panel
+PointLight2D
+CollisionShape2D
+Sprite2D
+StaticBody2D
+CanvasLayer
+LightOccluder2D
+CanvasModulate
+TileMapLayer
+Marker2D
+AnimatedSprite2D
+ProgressBar

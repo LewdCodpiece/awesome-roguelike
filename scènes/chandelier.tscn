@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckj7d4ichmmnv"]
+
+[ext_resource type="PackedScene" uid="uid://cx831mf0xoyg" path="res://scènes/tuile.tscn" id="1_cqfc3"]
+[ext_resource type="Script" uid="uid://dewak6svlptyk" path="res://chandelier.gd" id="2_stklg"]
+[ext_resource type="Texture2D" uid="uid://bshnjffirqpqe" path="res://ressources/chandelier_tuile.png" id="3_stklg"]
+[ext_resource type="Texture2D" uid="uid://dg8s8blxg8jlb" path="res://ressources/lumière_test_texture2.png" id="4_ii6qv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii6qv"]
+size = Vector2(8, 8)
+
+[node name="chandelier" instance=ExtResource("1_cqfc3")]
+script = ExtResource("2_stklg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0"]
+texture_filter = 1
+texture = ExtResource("3_stklg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+shape = SubResource("RectangleShape2D_ii6qv")
+
+[node name="PointLight2D" type="PointLight2D" parent="StaticBody2D" index="2"]
+color = Color(0.99999994, 0.78752327, 0.43788671, 1)
+shadow_enabled = true
+texture = ExtResource("4_ii6qv")
