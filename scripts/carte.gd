@@ -569,6 +569,7 @@ func ajouter_portes(étage: Array[Array], liste_info_portes) -> Array[Array]:
 				mobilier_node.set_cell(Vector2i(i.x, i.y), 0, Vector2i(0, 0), 2)
 			DIRECTIONS.S:
 				mobilier_node.set_cell(Vector2i(i.x, i.y), 0, Vector2i(0, 0), 2)
+		mobilier_array[i.y][i.x] = "P"
 	
 	return étage
 
@@ -596,24 +597,32 @@ func ajouter_escalier(étage: Array[Array]) -> Array[Array]:
 # fonction qui permet de trouver un endroit valide aléatoirement
 # à finir plus tard, quand j'en aurais besoin dans un cas réel
 func trouver_emplacement_valide_mobilier(étage, tuiles_autorisées: Array[String]=[]) -> Vector2i:
-	var pos: Vector2i = Vector2i(randi_range(0, len(étage[0] - 1)), randi_range(0, len(étage) - 1))
+	var pos: Vector2i = Vector2i(randi_range(0, len(étage[0]) - 1), randi_range(0, len(étage) - 1))
+	var emplacement_trouvé: bool = false
 	
-	while not "S" in étage[pos.y][pos.x] and mobilier_array[pos.y][pos.x] != "X":
-		pos = Vector2i(randi_range(0, len(étage[0] - 1)), randi_range(0, len(étage) - 1))
-	
+	while not emplacement_trouvé:
+		pos = Vector2i(randi_range(0, len(étage[0]) - 1), randi_range(0, len(étage) - 1))
+		
+		for i in tuiles_autorisées:
+			if étage[pos.y][pos.x] == i and mobilier_array[pos.y][pos.x] == "X":
+				emplacement_trouvé = true
+		
 	return pos
 
 # la fonction qui prend chaque salle, décide quel mobilier y placer, où le placer et le place en conséquence
 func meubler_salles(étage) -> Array[Array]:	
 	# on prend toutes les salles une par une
+	# pour les meubles non-uniques
 	for salle in infos_salles:
 		# est-ce que la salle a un chandelier: 90% des salles
 		if randf() >= .1:
 			var position_chandelier: Vector2i = Vector2i(randi_range(salle.x, salle.x + salle.l -1), randi_range(salle.y, salle.y + salle.h - 1))
 			var emplacement_trouvé: bool = false
+			var environs_chandelier = retour_alentours(mobilier_array, position_chandelier)
 			
 			while not emplacement_trouvé:
 				if (mobilier_array[position_chandelier.y][position_chandelier.x] == "X"
+					and not "P" in environs_chandelier
 					and étage[position_chandelier.y][position_chandelier.x] == "S"+str(salle.id)):
 						emplacement_trouvé = true
 				
@@ -622,5 +631,24 @@ func meubler_salles(étage) -> Array[Array]:
 			print("Chandelier généré dans la salle " + str(salle.id) + "!")
 			mobilier_array[position_chandelier.y][position_chandelier.x] = "Ch"
 			mobilier_node.set_cell(Vector2i(position_chandelier.y, position_chandelier.x), 0, Vector2i(0, 0), 4)
+		# est-ce que la salle a un/des tonneaux, 70% ont au moins un tonneau
+		if randf() >= .3:
+			# combien de tonneau
+			# au moins 1, et 3 au max
+			var rng = RandomNumberGenerator.new()
+			
+			var nb_tonneaux_liste = range(1, 4)
+			var poids = [3.0, 1.5, .5]
+			
+			var nb_tonneaux = nb_tonneaux_liste[rng.rand_weighted(poids)]
+			print("La salle " + str(salle.id) + " a " + str(nb_tonneaux) + " tonneaux.")
+			# on les ajoute
+			for i in range(nb_tonneaux):
+				var position_tonneau_i: Vector2i = trouver_emplacement_valide_mobilier(étage, ["S" + str(salle.id)])
+				
+				mobilier_array[position_tonneau_i.y][position_tonneau_i.x] = "To" + str(i)
+				mobilier_node.set_cell(Vector2i(position_tonneau_i.y, position_tonneau_i.x), 0, Vector2i(0, 0), 5)
+		else:
+			print("La salle " + str(salle.id) + " n'a pas de tonneau.")
 			
 	return étage

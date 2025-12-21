@@ -21,6 +21,6 @@ texture = ExtResource("3_stklg")
 shape = SubResource("RectangleShape2D_ii6qv")
 
 [node name="PointLight2D" type="PointLight2D" parent="StaticBody2D" index="2"]
-color = Color(0.99999994, 0.78752327, 0.43788671, 1)
+color = Color(0.9999998, 0.8546053, 0.62764895, 1)
 shadow_enabled = true
 texture = ExtResource("4_ii6qv")
