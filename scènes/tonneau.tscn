@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://oowm1m1la6wf"]
+
+[ext_resource type="PackedScene" uid="uid://4i0mv22cwa5r" path="res://scripts/contenant.tscn" id="1_w6ccn"]
+[ext_resource type="Script" uid="uid://bt5f6fo13myo0" path="res://tonneau.gd" id="2_1x4qd"]
+[ext_resource type="Texture2D" uid="uid://d3bt64nkkmboa" path="res://ressources/tonneau_tuile.png" id="3_1x4qd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv7mt"]
+size = Vector2(8, 8)
+
+[node name="tonneau" node_paths=PackedStringArray("loot_table") instance=ExtResource("1_w6ccn")]
+script = ExtResource("2_1x4qd")
+"capacité" = 16
+nom = "Tonneau"
+loot_table = {}
+"objets_générés" = {
+"max": 2,
+"min": 0
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="0"]
+texture_filter = 1
+texture = ExtResource("3_1x4qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+shape = SubResource("RectangleShape2D_nv7mt")

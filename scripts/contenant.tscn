@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://4i0mv22cwa5r"]
+
+[ext_resource type="PackedScene" uid="uid://cx831mf0xoyg" path="res://scènes/tuile.tscn" id="1_mx87h"]
+[ext_resource type="Script" uid="uid://c27866b1woy1i" path="res://contenant.gd" id="2_l3sjp"]
+
+[node name="contenant" node_paths=PackedStringArray("loot_table") instance=ExtResource("1_mx87h")]
+script = ExtResource("2_l3sjp")
+"capacité" = 10
+"vérouillé" = false
+nom = "Contenant"
+"piégé" = false
+loot_table = {}
+"objets_générés" = {
+"max": 10,
+"min": 0
+}
+collision = true
+bloque = true
+interractif = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+[node name="ui" type="Control" parent="CanvasLayer" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
