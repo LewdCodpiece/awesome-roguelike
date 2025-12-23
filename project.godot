@@ -19,6 +19,7 @@ config/icon="res://ressources/icon.svg"
 
 ToursDeJeu="*res://scripts/tours_de_jeu.gd"
 VariablesGlobales="*res://scripts/variables_globales.gd"
+InventaireJoueur="*res://scripts/inventaire_joueur.gd"
 
 [display]
 

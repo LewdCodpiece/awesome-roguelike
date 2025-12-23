@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceajgv0j3rky0"]
+[gd_scene load_steps=7 format=3 uid="uid://ceajgv0j3rky0"]
 
 [ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="1_11lx3"]
 [ext_resource type="Script" uid="uid://xwt8liirvoda" path="res://scripts/ui.gd" id="2_lwn30"]
 [ext_resource type="Script" uid="uid://rwm0f2exfui5" path="res://scripts/débug.gd" id="3_7d43l"]
 [ext_resource type="PackedScene" uid="uid://b5q4vbowxw53j" path="res://scènes/journale.tscn" id="4_fds4d"]
+[ext_resource type="Texture2D" uid="uid://6bdwa6hi3lak" path="res://ressources/icone_main_gauche.png" id="5_shd3h"]
+[ext_resource type="Texture2D" uid="uid://h4fm0ftjtpd3" path="res://ressources/icone_main_droite.png" id="6_5dbl0"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -50,3 +52,21 @@ layout_mode = 2
 [node name="UI_droite" type="PanelContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(240, 720)
 layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/UI_droite"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="main_gauche_placeholder" type="TextureRect" parent="HBoxContainer/UI_droite/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_shd3h")
+
+[node name="main_droite_placeholder" type="TextureRect" parent="HBoxContainer/UI_droite/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("6_5dbl0")
+
+[node name="marquer_hud_jeu" type="Marker2D" parent="."]
+position = Vector2(80, 0)

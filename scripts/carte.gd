@@ -596,13 +596,19 @@ func ajouter_escalier(étage: Array[Array]) -> Array[Array]:
 
 # fonction qui permet de trouver un endroit valide aléatoirement
 # à finir plus tard, quand j'en aurais besoin dans un cas réel
-func trouver_emplacement_valide_mobilier(étage, tuiles_autorisées: Array[String]=[]) -> Vector2i:
+func trouver_emplacement_valide_mobilier(étage, tuiles_autorisées: Array[String]=[], sous_section: Dictionary={"x": -1, "y": -1, "l": -1, "h": -1}) -> Vector2i:
 	var pos: Vector2i = Vector2i(randi_range(0, len(étage[0]) - 1), randi_range(0, len(étage) - 1))
 	var emplacement_trouvé: bool = false
 	
 	while not emplacement_trouvé:
-		pos = Vector2i(randi_range(0, len(étage[0]) - 1), randi_range(0, len(étage) - 1))
-		
+		# on définie la taille de recherche
+		# si on n'a pas de sous-section (sous-section.x = -1), totue la carte de l'étage
+		# sinon, juste la sosu-sections spécifiée
+		if sous_section.x == -1:
+			pos = Vector2i(randi_range(0, len(étage[0]) - 1), randi_range(0, len(étage) - 1))
+		else:
+			pos = Vector2i(randi_range(sous_section.x, sous_section.x + sous_section.l), randi_range(sous_section.y, sous_section.y + sous_section.h))
+			
 		for i in tuiles_autorisées:
 			if étage[pos.y][pos.x] == i and mobilier_array[pos.y][pos.x] == "X":
 				emplacement_trouvé = true
@@ -644,7 +650,7 @@ func meubler_salles(étage) -> Array[Array]:
 			print("La salle " + str(salle.id) + " a " + str(nb_tonneaux) + " tonneaux.")
 			# on les ajoute
 			for i in range(nb_tonneaux):
-				var position_tonneau_i: Vector2i = trouver_emplacement_valide_mobilier(étage, ["S" + str(salle.id)])
+				var position_tonneau_i: Vector2i = trouver_emplacement_valide_mobilier(étage, ["S" + str(salle.id)], salle)
 				
 				mobilier_array[position_tonneau_i.y][position_tonneau_i.x] = "To" + str(i)
 				mobilier_node.set_cell(Vector2i(position_tonneau_i.y, position_tonneau_i.x), 0, Vector2i(0, 0), 5)

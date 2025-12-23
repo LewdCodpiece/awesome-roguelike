@@ -1,11 +1,11 @@
 class_name Contenant extends "res://tuile.gd"
 
-@onready var ui = $CanvasLayer/ui
+@onready var ui = $CanvasLayer/ui_contenant
 
 # la capacité du contenant, i.e. combien d'objets il peut contenir
 @export var capacité: int = 10
-# le contenu, TODO: en faire un array d'objet quand j'aurais fais les objets
-var contenu: Array
+# le contenu
+var contenu: Array[Objet]
 # si le contenant est vérouillé
 @export var vérouillé: bool = false
 # le nom du contenant, i.e. coffre, tonneau, etc.
@@ -39,18 +39,20 @@ func action():
 	if not vérouillé:
 		# on ouvre l'ui
 		ui.visible = true
-		# TODO: tout le reste
+		# l'ui est ouvert, tout le jeu est en pause
+		VariablesGlobales.ui_ouvert = true
+		ui.peupler_interface()
 		
 		VariablesGlobales.journal.ajouter_message("Vous ouvrez " + self.nom + ".")
 	else:
 		VariablesGlobales.journal.ajouter_message(self.nom + " est vérouillé(e).")
 
 ## privés
-func retirer_objet(objet):
+func retirer_objet(objet: Objet):
 	if objet in self.contenu:
 		self.contenu.erase(objet)
 
-func ajouter_objet(objet):
+func ajouter_objet(objet: Objet):
 	if len(self.contenu) < self.capacité:
 		self.contenu.append(objet)
 	else:

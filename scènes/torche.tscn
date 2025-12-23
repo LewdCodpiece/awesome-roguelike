@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu685crw73a75"]
+
+[ext_resource type="PackedScene" uid="uid://bhha0cmdhqtg8" path="res://scènes/objet.tscn" id="1_uggkm"]
+[ext_resource type="Script" uid="uid://cqwss1ds2pl1n" path="res://scènes/torche.gd" id="2_fusxl"]
+[ext_resource type="Texture2D" uid="uid://uudsn1yor2yn" path="res://ressources/lumière_torche.png" id="3_gfsgm"]
+
+[node name="torche" instance=ExtResource("1_uggkm")]
+script = ExtResource("2_fusxl")
+nom = "Torche"
+valeure_marchande = 2
+"équipable" = Dictionary[String, bool]({
+"main_droite": true,
+"main_gauche": true
+})
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="0"]
+color = Color(0.70980394, 0.68235296, 0.08235294, 1)
+shadow_enabled = true
+texture = ExtResource("3_gfsgm")

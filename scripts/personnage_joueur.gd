@@ -14,12 +14,6 @@ var puissance: int = 0
 var finesse: int = 0
 var fortitude: int = 0
 
-# inventaire du personnage et emplacement d'équipement
-# il va falloir faire la classe objet et typer ces variables
-var inventaire: Array = []
-var objet_main_gauche
-var objet_main_droite
-
 # variables logiques
 
 func _process(delta: float) -> void:
