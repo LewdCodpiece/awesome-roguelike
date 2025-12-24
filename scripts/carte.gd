@@ -623,16 +623,8 @@ func meubler_salles(étage) -> Array[Array]:
 		# est-ce que la salle a un chandelier: 90% des salles
 		if randf() >= .1:
 			var position_chandelier: Vector2i = Vector2i(randi_range(salle.x, salle.x + salle.l -1), randi_range(salle.y, salle.y + salle.h - 1))
-			var emplacement_trouvé: bool = false
-			var environs_chandelier = retour_alentours(mobilier_array, position_chandelier)
-			
-			while not emplacement_trouvé:
-				if (mobilier_array[position_chandelier.y][position_chandelier.x] == "X"
-					and not "P" in environs_chandelier
-					and étage[position_chandelier.y][position_chandelier.x] == "S"+str(salle.id)):
-						emplacement_trouvé = true
 				
-				position_chandelier = Vector2i(randi_range(salle.x, salle.x + salle.l - 1), randi_range(salle.y, salle.y + salle.h - 1))
+			position_chandelier = trouver_emplacement_valide_mobilier(étage, ["S" + str(salle.id)], salle)
 			
 			print("Chandelier généré dans la salle " + str(salle.id) + "!")
 			mobilier_array[position_chandelier.y][position_chandelier.x] = "Ch"
