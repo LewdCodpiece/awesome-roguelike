@@ -1,4 +1,3 @@
-res://scènes/carte.tscn
+res://scripts/contenant.tscn
 res://thèmes/ui.tres
 res://scènes/ui.gdshader
-res://scripts/carte.gd

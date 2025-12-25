@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1766507885
+::res://::1766589906
 chandelier.gd::GDScript::7485453251159586638::1766506546::0::1::::<>Node2D<><>0<>0<><>::
 contenant.gd::GDScript::6736060885095292588::1766506546::0::1::::Contenant<>Node2D<><>0<>0<><>::
 escalier_tuile.gd::GDScript::2776782337416241482::1766506546::0::1::::<>Node2D<><>0<>0<><>::
@@ -42,8 +42,8 @@ tuile_erreur.png::CompressedTexture2D::6492539275721449973::1766506546::17665065
 tuile_escalier_1.png::CompressedTexture2D::3455489067385505532::1766506546::1766506546::1::::<><><>0<>0<>e3e82c0cf2e5a7660e06d3787e22d3dc<>res://.godot/imported/tuile_escalier_1.png-4136c1688c08de83db2a6ab0d5a5d5ba.ctex::
 tuile_porte1.png::CompressedTexture2D::1923810246473858369::1766506546::1766506546::1::::<><><>0<>0<>ed73e51a236e92214757f778533f5129<>res://.godot/imported/tuile_porte1.png-82ab9f2f96a0ed23aa28ea55694c708f.ctex::
 tuile_porte_EO_1.png::CompressedTexture2D::6311506097695719331::1766506546::1766506546::1::::<><><>0<>0<>d5e1fef7b07680b32d1dfd3c9035d8a5<>res://.godot/imported/tuile_porte_EO_1.png-845ba333a57bd98b9f0d24b1f68f52b6.ctex::
-::res://scripts/::1766506937
-carte.gd::GDScript::3728848769761974474::1766506937::0::1::::<>Node2D<><>0<>0<><>::
+::res://scripts/::1766508488
+carte.gd::GDScript::3728848769761974474::1766508488::0::1::::<>Node2D<><>0<>0<><>::
 contenant.tscn::PackedScene::2053531987811804797::1766506546::0::1::::<><><>0<>0<><>::uid://cx831mf0xoyg::::res://scènes/tuile.tscn<>uid://c27866b1woy1i::::res://contenant.gd<>uid://c374oiiyyd2pc::::res://thèmes/ui.tres<>uid://bb8glo1or512p::::res://scripts/ui_contenant.gd
 débug.gd::GDScript::1239400205735852886::1766506546::0::1::::<>PanelContainer<><>0<>0<><>::
 inventaire_joueur.gd::GDScript::3903814747025052193::1766506546::0::1::::<>Node<><>0<>0<><>::
@@ -55,8 +55,8 @@ ui.gd::GDScript::1660972858827813974::1766506546::0::1::::<>Control<><>0<>0<><>:
 ui_contenant.gd::GDScript::2525118715056499277::1766506546::0::1::::<>Control<><>0<>0<><>::
 variables_globales.gd::GDScript::4937956376030507699::1766506546::0::1::::<>Node<><>0<>0<><>::
 écran_accueil.gd::GDScript::3099047872744852876::1766506546::0::1::::<>Control<><>0<>0<><>::
-::res://scènes/::1766506858
-carte.tscn::PackedScene::1354353482326551441::1766506858::0::1::::<><><>0<>0<><>::uid://ckf86rx64gwou::::res://scènes/personnage_joueur.tscn<>uid://b76rnjs2dc8s8::::res://scènes/mur.tscn<>uid://c374oiiyyd2pc::::res://thèmes/ui.tres<>uid://bxfeh4s3ueqt5::::res://scènes/sol.tscn<>uid://btejuhgeciom1::::res://scripts/carte.gd<>uid://c3so64apx8t1::::res://scènes/tuile_erreur.tscn<>uid://lw3xan06i0fp::::res://scènes/tuile_porte_1.tscn<>uid://cqs27b5gp0ifl::::res://scènes/tuile_porte_eo_1.tscn<>uid://bd7uuyftgdbf4::::res://scènes/escalier_tuile.tscn<>uid://ckj7d4ichmmnv::::res://scènes/chandelier.tscn<>uid://oowm1m1la6wf::::res://scènes/tonneau.tscn
+::res://scènes/::1766508488
+carte.tscn::PackedScene::1354353482326551441::1766508488::0::1::::<><><>0<>0<><>::uid://ckf86rx64gwou::::res://scènes/personnage_joueur.tscn<>uid://b76rnjs2dc8s8::::res://scènes/mur.tscn<>uid://c374oiiyyd2pc::::res://thèmes/ui.tres<>uid://bxfeh4s3ueqt5::::res://scènes/sol.tscn<>uid://btejuhgeciom1::::res://scripts/carte.gd<>uid://c3so64apx8t1::::res://scènes/tuile_erreur.tscn<>uid://lw3xan06i0fp::::res://scènes/tuile_porte_1.tscn<>uid://cqs27b5gp0ifl::::res://scènes/tuile_porte_eo_1.tscn<>uid://bd7uuyftgdbf4::::res://scènes/escalier_tuile.tscn<>uid://ckj7d4ichmmnv::::res://scènes/chandelier.tscn<>uid://oowm1m1la6wf::::res://scènes/tonneau.tscn
 chandelier.tscn::PackedScene::5495259040339606159::1766506546::0::1::::<><><>0<>0<><>::uid://cx831mf0xoyg::::res://scènes/tuile.tscn<>uid://dewak6svlptyk::::res://chandelier.gd<>uid://bshnjffirqpqe::::res://ressources/chandelier_tuile.png<>uid://dg8s8blxg8jlb::::res://ressources/lumière_test_texture2.png
 création_personage.gd::GDScript::6713497165850069960::1766506546::0::1::::<>Control<><>0<>0<><>::
 création_personage.tscn::PackedScene::6191328007500048515::1766506546::0::1::::<><><>0<>0<><>::uid://c374oiiyyd2pc::::res://thèmes/ui.tres<>uid://c3iq0ul882ag::::res://ressources/dés_texture.png<>uid://c2wck180bfyy7::::res://scènes/création_personage.gd<>uid://drptsypu5vyl::::res://ressources/dés_texture_anim1.png<>uid://crpgtcni3k4ro::::res://ressources/dés_texture_anim2.png<>uid://ifu5n6hmwum5::::res://ressources/dés_texture_anim3.png<>uid://cfelufc6328eb::::res://ressources/dés_texture_anim4.png<>uid://brc26j4l70joi::::res://ressources/dés_texture_anim5.png<>uid://cp7d8u80np0ga::::res://ressources/dés_texture_anim6.png
@@ -76,8 +76,8 @@ tuile_erreur.tscn::PackedScene::199299844418373772::1766506546::0::1::::<><><>0<
 tuile_porte_1.gd::GDScript::7351199008331114058::1766506546::0::1::::<>Node2D<><>0<>0<><>::
 tuile_porte_1.tscn::PackedScene::819234760925057837::1766506546::0::1::::<><><>0<>0<><>::uid://cx831mf0xoyg::::res://scènes/tuile.tscn<>uid://2n54x8nxy3b6::::res://ressources/tuile_porte1.png<>uid://dcy8f5y5gpllq::::res://scènes/tuile_porte_1.gd
 tuile_porte_eo_1.tscn::PackedScene::5934718268538579661::1766506546::0::1::::<><><>0<>0<><>::uid://lw3xan06i0fp::::res://scènes/tuile_porte_1.tscn<>uid://cv6lt3kjowq6v::::res://ressources/tuile_porte_EO_1.png
-ui.gdshader::Shader::6149179008118080154::1766506824::0::1::::<><><>0<>0<><>::
+ui.gdshader::Shader::6149179008118080154::1766508446::0::1::::<><><>0<>0<><>::
 ui.tscn::PackedScene::5054155051694139417::1766506546::0::1::::<><><>0<>0<><>::uid://c374oiiyyd2pc::::res://thèmes/ui.tres<>uid://xwt8liirvoda::::res://scripts/ui.gd<>uid://rwm0f2exfui5::::res://scripts/débug.gd<>uid://b5q4vbowxw53j::::res://scènes/journale.tscn<>uid://6bdwa6hi3lak::::res://ressources/icone_main_gauche.png<>uid://h4fm0ftjtpd3::::res://ressources/icone_main_droite.png
 écran_accueil.tscn::PackedScene::1734583185579914398::1766506546::0::1::::<><><>0<>0<><>::uid://c374oiiyyd2pc::::res://thèmes/ui.tres<>uid://bkfg4oy8o0rlk::::res://scripts/écran_accueil.gd
-::res://thèmes/::1766506824
-ui.tres::Theme::6805975304953826052::1766506824::0::1::::<><><>0<>0<><>::uid://d12ksumv7sy6v::::res://ressources/bouton_hover.png<>uid://b2vd3oiy5x0xp::::res://ressources/bouton_désactivé.png<>uid://013s2iu1pcys::::res://ressources/bouton_def.png<>uid://bpd6ts7vomgp5::::res://polices/CloisterBlackLight-axjg.ttf<>uid://b76byhpw04nro::::res://ressources/fond_ui.png<>uid://8k8iwpfxwgnj::::res://ressources/bouton_appuyé.png<>uid://bqr51vfqr26yd::::res://ressources/pip_bar_progression.png
+::res://thèmes/::1766508446
+ui.tres::Theme::6805975304953826052::1766508446::0::1::::<><><>0<>0<><>::uid://d12ksumv7sy6v::::res://ressources/bouton_hover.png<>uid://b2vd3oiy5x0xp::::res://ressources/bouton_désactivé.png<>uid://013s2iu1pcys::::res://ressources/bouton_def.png<>uid://bpd6ts7vomgp5::::res://polices/CloisterBlackLight-axjg.ttf<>uid://b76byhpw04nro::::res://ressources/fond_ui.png<>uid://8k8iwpfxwgnj::::res://ressources/bouton_appuyé.png<>uid://bqr51vfqr26yd::::res://ressources/pip_bar_progression.png
