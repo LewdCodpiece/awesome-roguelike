@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_11lx3")
 script = ExtResource("2_lwn30")
 
@@ -21,25 +22,30 @@ script = ExtResource("2_lwn30")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="barre_gauche" type="PanelContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(80, 720)
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("1_11lx3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="zone_jeu" type="Container" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(960, 516)
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 
 [node name="marker_jeu" type="Marker2D" parent="HBoxContainer/VBoxContainer/zone_jeu"]
 
 [node name="débug" type="PanelContainer" parent="HBoxContainer/VBoxContainer/zone_jeu"]
 layout_mode = 2
+mouse_filter = 2
 script = ExtResource("3_7d43l")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/zone_jeu/débug"]

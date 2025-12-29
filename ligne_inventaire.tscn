@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg0yj0203lk8g"]
+
+[ext_resource type="Script" uid="uid://crbcha2lj6ay4" path="res://ligne_inventaire.gd" id="1_u6iop"]
+
+[node name="LigneInventaire" type="PanelContainer"]
+offset_right = 16.0
+offset_bottom = 16.0
+focus_mode = 2
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_u6iop")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

@@ -28,7 +28,9 @@ frame_5/duration = 1.0
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_biybg"]
 size = Vector2(64, 64)
 
-[node name="création_personage" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="création_personage" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,34 +40,34 @@ grow_vertical = 2
 theme = ExtResource("1_g2c7a")
 script = ExtResource("2_biybg")
 
-[node name="fond" type="PanelContainer" parent="."]
+[node name="fond" type="PanelContainer" parent="création_personage"]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="colonnes" type="HBoxContainer" parent="fond"]
+[node name="colonnes" type="HBoxContainer" parent="création_personage/fond"]
 layout_mode = 2
 
-[node name="stats" type="PanelContainer" parent="fond/colonnes"]
+[node name="stats" type="PanelContainer" parent="création_personage/fond/colonnes"]
 layout_mode = 2
 
-[node name="lignes" type="VBoxContainer" parent="fond/colonnes/stats"]
+[node name="lignes" type="VBoxContainer" parent="création_personage/fond/colonnes/stats"]
 layout_mode = 2
 
-[node name="titre" type="Label" parent="fond/colonnes/stats/lignes"]
+[node name="titre" type="Label" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Statistiques du personnage"
 
-[node name="puissance" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+[node name="puissance" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/puissance"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/puissance"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Puissance"
 
-[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/puissance"]
+[node name="TextureProgressBar" type="ProgressBar" parent="création_personage/fond/colonnes/stats/lignes/puissance"]
 custom_minimum_size = Vector2(160, 16)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -75,15 +77,15 @@ value = 5.0
 rounded = true
 show_percentage = false
 
-[node name="verve" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+[node name="verve" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/verve"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/verve"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Verve"
 
-[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/verve"]
+[node name="TextureProgressBar" type="ProgressBar" parent="création_personage/fond/colonnes/stats/lignes/verve"]
 custom_minimum_size = Vector2(160, 16)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -93,15 +95,15 @@ value = 5.0
 rounded = true
 show_percentage = false
 
-[node name="entendement" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+[node name="entendement" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/entendement"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/entendement"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Entendement"
 
-[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/entendement"]
+[node name="TextureProgressBar" type="ProgressBar" parent="création_personage/fond/colonnes/stats/lignes/entendement"]
 custom_minimum_size = Vector2(160, 16)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -111,15 +113,15 @@ value = 5.0
 rounded = true
 show_percentage = false
 
-[node name="finesse" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+[node name="finesse" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/finesse"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/finesse"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Finesse"
 
-[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/finesse"]
+[node name="TextureProgressBar" type="ProgressBar" parent="création_personage/fond/colonnes/stats/lignes/finesse"]
 custom_minimum_size = Vector2(160, 16)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -129,15 +131,15 @@ value = 5.0
 rounded = true
 show_percentage = false
 
-[node name="fortitude" type="HBoxContainer" parent="fond/colonnes/stats/lignes"]
+[node name="fortitude" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/fortitude"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/fortitude"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Fortitude"
 
-[node name="TextureProgressBar" type="ProgressBar" parent="fond/colonnes/stats/lignes/fortitude"]
+[node name="TextureProgressBar" type="ProgressBar" parent="création_personage/fond/colonnes/stats/lignes/fortitude"]
 custom_minimum_size = Vector2(160, 16)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -147,7 +149,7 @@ value = 5.0
 rounded = true
 show_percentage = false
 
-[node name="reroll" type="TextureButton" parent="fond/colonnes/stats/lignes"]
+[node name="reroll" type="TextureButton" parent="création_personage/fond/colonnes/stats/lignes"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -157,76 +159,76 @@ texture_pressed = ExtResource("2_6nbe5")
 texture_hover = SubResource("AnimatedTexture_2vcqw")
 stretch_mode = 0
 
-[node name="Charactéristiques" type="PanelContainer" parent="fond/colonnes/stats/lignes"]
+[node name="Charactéristiques" type="PanelContainer" parent="création_personage/fond/colonnes/stats/lignes"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fond/colonnes/stats/lignes/Charactéristiques"]
+[node name="VBoxContainer" type="VBoxContainer" parent="création_personage/fond/colonnes/stats/lignes/Charactéristiques"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
 layout_mode = 2
 text = "Charactéristiques"
 
-[node name="pdv" type="HBoxContainer" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
+[node name="pdv" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer/pdv"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer/pdv"]
 layout_mode = 2
 text = "Point de vie"
 
-[node name="pdm" type="HBoxContainer" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
+[node name="pdm" type="HBoxContainer" parent="création_personage/fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer/pdm"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/stats/lignes/Charactéristiques/VBoxContainer/pdm"]
 layout_mode = 2
 text = "Point de mana"
 
-[node name="inventaire" type="PanelContainer" parent="fond/colonnes"]
+[node name="inventaire" type="PanelContainer" parent="création_personage/fond/colonnes"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fond/colonnes/inventaire"]
+[node name="VBoxContainer" type="VBoxContainer" parent="création_personage/fond/colonnes/inventaire"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/inventaire/VBoxContainer"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/inventaire/VBoxContainer"]
 layout_mode = 2
 text = "Inventaire initial du personnage"
 
-[node name="objets" type="PanelContainer" parent="fond/colonnes/inventaire/VBoxContainer"]
+[node name="objets" type="PanelContainer" parent="création_personage/fond/colonnes/inventaire/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="liste" type="VBoxContainer" parent="fond/colonnes/inventaire/VBoxContainer/objets"]
+[node name="liste" type="VBoxContainer" parent="création_personage/fond/colonnes/inventaire/VBoxContainer/objets"]
 layout_mode = 2
 
-[node name="lore" type="PanelContainer" parent="fond/colonnes"]
+[node name="lore" type="PanelContainer" parent="création_personage/fond/colonnes"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fond/colonnes/lore"]
+[node name="VBoxContainer" type="VBoxContainer" parent="création_personage/fond/colonnes/lore"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="fond/colonnes/lore/VBoxContainer"]
+[node name="Label" type="Label" parent="création_personage/fond/colonnes/lore/VBoxContainer"]
 layout_mode = 2
 text = "Historique du personnage"
 
-[node name="image" type="TextureRect" parent="fond/colonnes/lore/VBoxContainer"]
+[node name="image" type="TextureRect" parent="création_personage/fond/colonnes/lore/VBoxContainer"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_biybg")
 stretch_mode = 2
 
-[node name="Label2" type="Label" parent="fond/colonnes/lore/VBoxContainer"]
+[node name="Label2" type="Label" parent="création_personage/fond/colonnes/lore/VBoxContainer"]
 layout_mode = 2
 text = "Biographie"
 
-[node name="Biographie" type="TextEdit" parent="fond/colonnes/lore/VBoxContainer"]
+[node name="Biographie" type="TextEdit" parent="création_personage/fond/colonnes/lore/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="fond"]
+[node name="Button" type="Button" parent="création_personage/fond"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8
 text = "Commencer l'exploration"
 
-[connection signal="pressed" from="fond/colonnes/stats/lignes/reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="création_personage/fond/colonnes/stats/lignes/reroll" to="création_personage" method="_on_reroll_pressed"]
