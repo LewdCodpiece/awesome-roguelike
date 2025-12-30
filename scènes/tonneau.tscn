@@ -7,15 +7,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nv7mt"]
 size = Vector2(8, 8)
 
-[node name="tonneau" node_paths=PackedStringArray("loot_table") instance=ExtResource("1_w6ccn")]
+[node name="tonneau" instance=ExtResource("1_w6ccn")]
 script = ExtResource("2_1x4qd")
 "capacité" = 16
 nom = "Tonneau"
-loot_table = {}
-"objets_générés" = {
-"max": 2,
-"min": 0
-}
+loot_table = Dictionary[String, float]({
+"torche": 1.0
+})
+obj_max = 3
 
 [node name="ui_contenant" parent="CanvasLayer" index="0"]
 offset_right = 720.0

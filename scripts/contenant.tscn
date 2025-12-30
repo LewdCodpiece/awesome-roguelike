@@ -5,17 +5,15 @@
 [ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="3_iqcg2"]
 [ext_resource type="Script" uid="uid://bb8glo1or512p" path="res://scripts/ui_contenant.gd" id="3_l3sjp"]
 
-[node name="contenant" node_paths=PackedStringArray("loot_table") instance=ExtResource("1_mx87h")]
+[node name="contenant" instance=ExtResource("1_mx87h")]
 script = ExtResource("2_l3sjp")
 "capacité" = 10
 "vérouillé" = false
 nom = "Contenant"
 "piégé" = false
-loot_table = {}
-"objets_générés" = {
-"max": 10,
-"min": 0
-}
+loot_table = Dictionary[String, float]({})
+obj_min = 0
+obj_max = 10
 collision = true
 bloque = true
 interractif = true
@@ -77,4 +75,4 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/ui_contenant/VBoxContainer/PanelContainer" index="0"]
 layout_mode = 2
-text = "[q] Quitter [c] changer d'inventaire [u] utiliser [e] équiper"
+text = "[f] fermer [d] déplacer d'inventaire [u] utiliser [e] équiper"

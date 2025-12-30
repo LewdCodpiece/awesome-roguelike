@@ -2,8 +2,10 @@ res://scripts/contenant.tscn
 res://thèmes/ui.tres
 res://scènes/ui.gdshader
 res://scripts/ui_contenant.gd
-res://ligne_inventaire.tscn
-res://scènes/journale.tscn
-res://scènes/ui.tscn
-res://ligne_inventaire.gd
+res://scènes/tonneau.tscn
+res://tonneau.gd
+res://contenant.gd
+res://objets_globals.gd
+res://scènes/torche.tscn
+res://scènes/torche.gd
 res://scripts/inventaire_joueur.gd

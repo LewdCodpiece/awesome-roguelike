@@ -1,4 +1,4 @@
-extends "res://scripts/objet.gd"
+class_name Torche extends "res://scripts/objet.gd"
 
 @onready var lumière = $PointLight2D
 

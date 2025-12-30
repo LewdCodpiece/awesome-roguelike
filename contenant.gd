@@ -14,11 +14,12 @@ var contenu: Array[Objet]
 @export var piégé: bool = false
 
 # la loot table du contenant: {objet, poids}
-@export var loot_table: Dictionary[Objet, float] = {
+@export var loot_table: Dictionary[String, float] = {
 	
 }
 # combien d'objet peuvent se trouver dans le contennant au moment de la génération
-@export var objets_générés: Dictionary = {"min": 0, "max": 10}
+@export var obj_min: int = 0
+@export var obj_max: int = 10
 
 signal ouverture
 
@@ -26,13 +27,13 @@ func _ready() -> void:
 	ui.visible = false
 	
 	# le contenant est remplie au moment de son instantiation
-	var nb_objets = randi_range(objets_générés.min, objets_générés.max)
+	var nb_objets = randi_range(obj_min, obj_max)
 	var rng = RandomNumberGenerator.new()
 	
-	#var objets = loot_table.keys()
-	#var poids = loot_table.values()
-	#for i in range(nb_objets):
-	#	self.contenu.append(objets[rng.rand_weighted(poids)])
+	var objets = loot_table.keys()
+	var poids = loot_table.values()
+	for i in range(nb_objets):
+		self.contenu.append(ObjetsGlobals.str_obj[objets[rng.rand_weighted(poids)]])
 
 ## publiques
 func action():

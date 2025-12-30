@@ -1,3 +1,4 @@
 res://scripts/tours_de_jeu.gd
 res://scripts/variables_globales.gd
 res://scripts/inventaire_joueur.gd
+res://objets_globals.gd
