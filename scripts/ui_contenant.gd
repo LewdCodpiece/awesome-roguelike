@@ -38,13 +38,13 @@ func _process(delta: float) -> void:
 	if objet_sélectionné != null:
 		# on modifie le label des commandes en fonctiond des actions possibles
 		# et en fonction de sa provenance
-		label_instruction.text = "[f] fermer "
+		label_instruction.text = "[q] quitter "
 		if not objet_sélectionné in InventaireJoueur.inventaire: label_instruction.text += "[p] prendre "
 		else: label_instruction.text += "[p] déposer "
 		if objet_sélectionné.équipable: label_instruction.text += "[e] équiper "
 		if objet_sélectionné.utilisable.inventaire: label_instruction.text += "[u] utiliser "
 	else:
-		label_instruction.text = "[f] fermer "
+		label_instruction.text = "[q] quitter "
 	
 
 # permet de peupler l'interface quand on l'ouvre
@@ -113,7 +113,12 @@ func déposer(obj: Objet):
 	pass
 
 func prendre(obj: Objet):
-	pass
+	# on ajoute l'objet à l'inventaire du joueur
+	InventaireJoueur.ajouter_objet(obj)
+	# on retire l'objet du contenant
+	contenant_parent.retirer_objet(obj)
+	# on met à jour l'affichage des objets
+	peupler_interface()
 
 func équiper(obj: Objet):
 	return true
@@ -122,5 +127,5 @@ func utiliser(obj: Objet):
 	pass
 
 func fermer():
-	self.visible = false
+	visible = false
 	VariablesGlobales.ui_ouvert = false

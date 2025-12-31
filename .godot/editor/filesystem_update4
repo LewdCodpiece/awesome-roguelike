@@ -1,11 +1,8 @@
 res://scripts/contenant.tscn
 res://thèmes/ui.tres
 res://scènes/ui.gdshader
-res://scripts/ui_contenant.gd
-res://scènes/tonneau.tscn
-res://tonneau.gd
+res://scripts/variables_globales.gd
 res://contenant.gd
-res://objets_globals.gd
-res://scènes/torche.tscn
-res://scènes/torche.gd
+res://scripts/ui_contenant.gd
+res://scènes/personnage_joueur.tscn
 res://scripts/inventaire_joueur.gd
