@@ -44,6 +44,9 @@ func action():
 		VariablesGlobales.ui_ouvert = true
 		ui.peupler_interface()
 		
+		# on émet le signal que le coffre a été ouvert
+		ouverture.emit()
+		
 		VariablesGlobales.journal.ajouter_message("Vous ouvrez " + self.nom + ".")
 	else:
 		VariablesGlobales.journal.ajouter_message(self.nom + " est vérouillé(e).")
@@ -59,5 +62,12 @@ func ajouter_objet(objet: Objet):
 	else:
 		VariablesGlobales.journal.ajouter_message("L'inventaire du contenant est plein.")
 
-func remplir():
+func activer_piège():
 	pass
+
+func _on_ouverture() -> void:
+	# si le contenant n'est pas piégé, rien ne se passe
+	# sinon, le piège s'active
+	if self.piégé:
+		activer_piège()
+		VariablesGlobales.journal.ajouter_message("Le " + self.nom + " était piégé!")

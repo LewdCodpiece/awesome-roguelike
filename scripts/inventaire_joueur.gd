@@ -16,6 +16,18 @@ var emplacements_équipement: Dictionary = {
 	"main_droite": null
 }
 
+# fonctions et signal pour gérer l'équipement d'objets
+# l'équipement d'objet nécessite que le joueur choisisse l'emplacement d'équipement
+# par conséquent, on ne peut pas le faire uniquement via un script global
+# pour ce faire, on créer un signal qui est emit quand la fonction équiper_objet est appelé
+# cette fonction prend un objet qui est redirigé dans le signal
+# la scène personnage est connecté à ce signal par une fonction qui affiche un ui pour l'équipement
+# cette fonction assigne ensuite l'objet à une des variables d'équipements
+signal objet_équipé(obj: Objet)
+
+func équiper_objet(obj: Objet):
+	objet_équipé.emit(obj)
+
 # permet de vérifier si un objet se trouve dans l'inventaire du personnage
 func vérifier(obj: Objet) -> bool:
 	if obj in inventaire: return true

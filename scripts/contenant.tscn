@@ -76,3 +76,5 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer/ui_contenant/VBoxContainer/PanelContainer" index="0"]
 layout_mode = 2
 text = "[f] fermer [d] déplacer d'inventaire [u] utiliser [e] équiper"
+
+[connection signal="ouverture" from="." to="." method="_on_ouverture"]
