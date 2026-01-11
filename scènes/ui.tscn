@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceajgv0j3rky0"]
+[gd_scene load_steps=8 format=3 uid="uid://ceajgv0j3rky0"]
 
 [ext_resource type="Theme" uid="uid://c374oiiyyd2pc" path="res://thèmes/ui.tres" id="1_11lx3"]
 [ext_resource type="Script" uid="uid://xwt8liirvoda" path="res://scripts/ui.gd" id="2_lwn30"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5q4vbowxw53j" path="res://scènes/journale.tscn" id="4_fds4d"]
 [ext_resource type="Texture2D" uid="uid://6bdwa6hi3lak" path="res://ressources/icone_main_gauche.png" id="5_shd3h"]
 [ext_resource type="Texture2D" uid="uid://h4fm0ftjtpd3" path="res://ressources/icone_main_droite.png" id="6_5dbl0"]
+[ext_resource type="Script" uid="uid://dm0o8s6auj602" path="res://scripts/ui_équipement.gd" id="7_5dbl0"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -76,3 +77,17 @@ texture = ExtResource("6_5dbl0")
 
 [node name="marquer_hud_jeu" type="Marker2D" parent="."]
 position = Vector2(80, 0)
+
+[node name="ui_équipement" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 74.0
+offset_right = 846.0
+offset_bottom = 439.0
+script = ExtResource("7_5dbl0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ui_équipement"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui_équipement/ScrollContainer"]
+layout_mode = 2

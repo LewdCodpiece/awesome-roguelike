@@ -1,8 +1,6 @@
-res://scripts/contenant.tscn
+res://scènes/ui.tscn
 res://thèmes/ui.tres
 res://scènes/ui.gdshader
-res://scripts/ui_contenant.gd
-res://contenant.gd
+res://scripts/ui_équipement.gd
+res://scripts/contenant.tscn
 res://scripts/inventaire_joueur.gd
-res://scènes/personnage_joueur.tscn
-res://scripts/ui.gd

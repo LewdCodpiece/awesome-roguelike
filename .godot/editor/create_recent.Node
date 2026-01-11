@@ -1,6 +1,7 @@
-Label
-PanelContainer
 VBoxContainer
+ScrollContainer
+PanelContainer
+Label
 Button
 CanvasLayer
 TextureRect
@@ -11,4 +12,3 @@ PointLight2D
 CollisionShape2D
 StaticBody2D
 Sprite2D
-Control

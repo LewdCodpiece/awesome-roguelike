@@ -19,7 +19,7 @@ var emplacements_équipement: Dictionary = {
 # fonctions et signal pour gérer l'équipement d'objets
 # l'équipement d'objet nécessite que le joueur choisisse l'emplacement d'équipement
 # par conséquent, on ne peut pas le faire uniquement via un script global
-# pour ce faire, on créer un signal qui est emit quand la fonction équiper_objet est appelé
+# pour ce faire, on crée un signal qui est emit quand la fonction équiper_objet est appelé
 # cette fonction prend un objet qui est redirigé dans le signal
 # la scène personnage est connecté à ce signal par une fonction qui affiche un ui pour l'équipement
 # cette fonction assigne ensuite l'objet à une des variables d'équipements
@@ -39,24 +39,28 @@ func vérifier(obj: Objet) -> bool:
 func ajouter_objet(obj):
 	if obj is Array:
 		var liste_objet_noms: String = ""
-		for o in obj:
+		for o: Objet in obj:
 			inventaire.append(o)
+			o.dans_inventaire = true
 			liste_objet_noms += o.nom + ", "
 		VariablesGlobales.journal.ajouter_message("Vous mettez " + liste_objet_noms + " dans votre inventaire.")
 	else:	
 		VariablesGlobales.journal.ajouter_message("Vous mettez " + obj.nom + " dans votre inventaire.")
 		inventaire.append(obj)
+		obj.dans_inventaire = true
 
 # pour retirer un ou des objets de l'inventaires
 func retirer_objet(obj):
 	if obj is Array:
 		var liste_objets_noms: String = ""
-		for o in obj:
+		for o: Objet in obj:
 			if vérifier(o):
 				inventaire.erase(o)
 				liste_objets_noms += o.nom + ", "
+				o.dans_inventaire = false
 		VariablesGlobales.journal.ajouter_message("Vous retirez " + liste_objets_noms + " de votre inventaire.")
 	else:
 		if vérifier(obj):
 			inventaire.erase(obj)
 			VariablesGlobales.journal.ajouter_message("Vous retirez " + obj.nom + " de votre inventaire.")
+			obj.dans_inventaire = false

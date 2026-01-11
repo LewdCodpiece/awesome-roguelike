@@ -148,7 +148,7 @@ func prendre(obj: Objet):
 	peupler_interface()
 
 func équiper(obj: Objet):
-	return true
+	InventaireJoueur.équiper_objet(obj)
 
 func utiliser(obj: Objet):
 	pass
